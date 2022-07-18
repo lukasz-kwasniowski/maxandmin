@@ -1,1 +1,3 @@
-ten projekt ot
+MAX AND MIN
+
+Simple program
