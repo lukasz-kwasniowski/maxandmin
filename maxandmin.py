@@ -1,0 +1,61 @@
+#max i min
+import random
+
+class MAX_AND_MIN:
+    def __init__(self):
+        self.list = []
+        self.help_max = 1
+        self.end = True
+
+    def create_list(self):
+        length = int(input("enter list length: "))
+        for i in range(length):
+            self.los = random.randint(1, 999)
+            self.list.append(self.los)
+        print(self.list)
+
+    def MAX(self):
+        for i in range(len(self.list)):
+            if self.help_max > self.list[i]:
+                self.help_max = self.help_max
+            else:
+                self.help_max = self.list[i]
+
+    def MIN(self):
+        self.help_min = self.help_max
+        for i in range(len(self.list)):
+            if self.help_min < self.list[i]:
+                self.help_min = self.help_min
+            else:
+                self.help_min = self.list[i]
+
+    def display(self):
+        self.MAX()
+        self.MIN()
+        print("List: \n")
+        print(self.list)
+        print("Max: " + str(self.help_max))
+        print("Min: " + str(self.help_min))
+
+    def ende(self):
+        self.end = False
+
+    def menu(self):
+        while self.end == True:
+            print("1. Create list;\n"
+                  "2. Display max and min;\n"
+                  "3. Leave program\n")
+            wybor = int(input(">>> "))
+
+            if wybor == 1:
+                self.create_list()
+
+            if wybor == 2:
+                self.display()
+
+            if wybor == 3:
+                self.ende()
+
+z1 = MAX_AND_MIN()
+print(z1.menu())
+
